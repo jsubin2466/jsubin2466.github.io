@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subin Jeon — Frontend, UX & Product</title>
+  <meta name="description" content="Portfolio of Subin Jeon, Software Engineering student at Kookmin University: mobile frontend & UX, AI product management, and cloud research.">
+  <meta property="og:title" content="Subin Jeon — Frontend, UX & Product">
+  <meta property="og:description" content="Mobile frontend & UX, AI product, and cloud research projects.">
+  <meta property="og:image" content="https://jsubin2466.github.io/assets/otter.webp">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23d4572f'/><text x='32' y='43' font-family='Georgia' font-size='32' fill='white' text-anchor='middle'>S</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">Subin Jeon</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Software Engineering · Kookmin University</p>
+        <h1>I design and build products people <em>actually</em> use.</h1>
+        <p class="lede">I’m Subin — a frontend &amp; UX developer who also leads product. This fall I shipped a mobile app for long-distance couples, managed an AI product that turns cooking videos into trustworthy recipes, and led research for a cloud validation platform for autonomous driving.</p>
+        <div class="cta">
+          <a class="btn primary" href="#work">See my work</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+        </div>
+        <ul class="hero-links">
+          <li><a href="https://github.com/jsubin2466" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/suebin-jeon-414aa6434" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:jsubin2004@gmail.com">Email</a></li>
+        </ul>
+      </div>
+      <figure class="hero-art">
+        <img src="assets/otter.webp" alt="Hand-drawn otter character from the Haedal app" width="537" height="522">
+        <figcaption>The otter from Haedal, one of my projects</figcaption>
+      </figure>
+    </section>
+
+    <section class="stats" aria-label="Highlights">
+      <div><strong>3</strong><span>team projects in fall 2026</span></div>
+      <div><strong>~46%</strong><span>of 489 commits on Haedal</span></div>
+      <div><strong>50.8 → 79.1%</strong><span>ingredient recall on Pinch</span></div>
+      <div><strong>KR · US</strong><span>bilingual, cross-time-zone teams</span></div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="work">
+      <h2 class="section-title">Selected work</h2>
+
+      <!-- Haedal -->
+      <article class="project" id="haedal">
+        <div class="project-head">
+          <p class="tag">Mobile app · Frontend &amp; UX Lead</p>
+          <h3>Haedal <span>(Otter Half)</span></h3>
+          <p class="meta">Sep 2026 – Present · 2-person engineering team · Launching on iOS &amp; Android (KR/US)</p>
+        </div>
+        <div class="project-body">
+          <div class="project-copy">
+            <p class="summary">A gamified app for long-distance couples. A daily question opens an hour before the couple’s usual call, and each partner’s answer is revealed only after both reply. Shared missions, a turn-based voice walkie-talkie, and a live “mood otter” turn time apart into a shared story.</p>
+            <h4>What I did</h4>
+            <ul>
+              <li><b>Owned the UX end to end in Figma</b> — onboarding, invite-code pairing, the “two islands” home that shows each partner’s local sky, and the v2 mission roadmap and rankings, iterated from lo-fi wireframes into a 5-tab structure built around the partner’s otter.</li>
+              <li><b>Built the Expo (React Native, TypeScript) app</b> — Apple/Kakao/Google sign-in, session restore, push notifications that deep-link to the day’s question, time-zone detection, and KR/EN i18n.</li>
+              <li><b>Wired v2 features to the backend</b> — missions, rankings, history, rewards, voice clips, and mood connected to Supabase RPCs, Storage, and Realtime Presence.</li>
+              <li>Authored ~46% of 489 commits across 180 reviewed PRs with CI (lint, typecheck, unit &amp; 200+ DB test files) and staging-gated deploys via EAS.</li>
+            </ul>
+            <ul class="chips">
+              <li>Expo</li><li>React Native</li><li>TypeScript</li><li>Supabase</li><li>Realtime</li><li>Figma</li><li>i18next</li><li>GitHub Actions</li>
+            </ul>
+          </div>
+          <div class="gallery">
+            <figure class="phone"><img src="assets/haedal-wireframe.webp" alt="Early lo-fi wireframe of the Haedal home screen" loading="lazy" width="560" height="1137"><figcaption>Lo-fi wireframe</figcaption></figure>
+            <figure class="phone"><img src="assets/haedal-ranking.webp" alt="Haedal ranking screen design" loading="lazy" width="560" height="1155"><figcaption>Ranking (hi-fi)</figcaption></figure>
+            <figure class="phone"><img src="assets/haedal-score.webp" alt="Haedal score breakdown pop-up design" loading="lazy" width="560" height="1155"><figcaption>Score breakdown</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- Pinch -->
+      <article class="project" id="pinch">
+        <div class="project-head">
+          <p class="tag">Applied AI · Product Manager</p>
+          <h3>Pinch</h3>
+          <p class="meta">Oct 2026 – Present · 3-person team · Final demo Dec 2026</p>
+        </div>
+        <div class="project-body">
+          <div class="project-copy">
+            <p class="summary">Paste a YouTube Shorts or Instagram Reels cooking video, get a recipe you can trust. Every ingredient, amount, and step is grounded in evidence from the video — and anything the AI had to guess is clearly labeled as an estimate.</p>
+            <h4>What I did</h4>
+            <ul>
+              <li><b>Found the product gap.</b> A competitor teardown (ReciMe, Flavorish, others) showed no app separates amounts stated in the video from AI guesses — so “trust” became the core of the product.</li>
+              <li><b>Led the product</b> — wrote the product spec, dev plan, and cost report, and ran the sprint backlog in Jira.</li>
+              <li><b>Built the core pipeline</b> — captions, pinned comment, Whisper speech-to-text, and frame OCR merged into one evidence bundle; GPT-4.1 cites evidence IDs under a strict JSON schema and code verifies every amount and timestamp.</li>
+            </ul>
+            <div class="metrics">
+              <div><strong>50.8% → 79.1%</strong><span>ingredient recall with few-shot retrieval (36-video eval set)</span></div>
+              <div><strong>45.4% → 61.6%</strong><span>recall after LoRA fine-tuning Qwen2.5-3B</span></div>
+              <div><strong>~4.4 s · ~$0.01</strong><span>per video, end to end</span></div>
+            </div>
+            <ul class="chips">
+              <li>Product strategy</li><li>Node.js</li><li>GPT-4.1</li><li>Whisper</li><li>LoRA</li><li>Next.js</li><li>Supabase</li><li>Jira</li>
+            </ul>
+          </div>
+          <div class="gallery">
+            <figure class="phone"><img src="assets/pinch-home.webp" alt="Pinch home screen mockup" loading="lazy" width="554" height="1200"><figcaption>Home</figcaption></figure>
+            <figure class="phone"><img src="assets/pinch-converting.webp" alt="Pinch converting a video into a recipe" loading="lazy" width="554" height="1200"><figcaption>Converting</figcaption></figure>
+            <figure class="phone"><img src="assets/pinch-review.webp" alt="Pinch review screen showing which amounts came from the video and which are estimates" loading="lazy" width="554" height="1200"><figcaption>Review: evidence vs. estimate</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- Follow-the-Sun -->
+      <article class="project" id="fts">
+        <div class="project-head">
+          <p class="tag">Cloud computing · Research Lead</p>
+          <h3>Follow-the-Sun SIL Validation</h3>
+          <p class="meta">Oct 2026 – Present · 3-person team · AWS proof of concept</p>
+        </div>
+        <div class="project-body single">
+          <div class="project-copy">
+            <p class="summary">Autonomous-driving teams in Korea and the US run software-in-the-loop (SIL) simulations around the clock. When one team signs off, the other should be able to pick up a failure and reproduce it — without a meeting. We designed the handoff layer that makes that possible.</p>
+            <h4>What I did</h4>
+            <ul>
+              <li><b>Led the research</b> — competitor analysis of Applied Intuition, Foretellix, dSPACE, AWS ADDF, and NVIDIA OSMO, plus a literature review on AD test flakiness, test prioritization, and follow-the-sun handoffs.</li>
+              <li><b>Turned research into design</b> — ideas borrowed from VFX/animation pipelines (immutable evidence, stale-result detection, small task units) shaped a sealed handoff package and a lease-based job state machine.</li>
+              <li><b>Defined how we’d prove it</b> — 9 evaluation metrics (reproduction rate, handoff time, duplicate-commit rate…) and a 24-handoff experiment against manual baselines.</li>
+            </ul>
+            <ul class="chips">
+              <li>Research</li><li>AWS Step Functions</li><li>SQS</li><li>DynamoDB</li><li>S3</li><li>CARLA</li><li>dSPACE SIMPHERA</li><li>Python</li>
+            </ul>
+          </div>
+          <figure class="diagram">
+            <svg viewBox="0 0 900 360" role="img" aria-labelledby="fts-title">
+              <title id="fts-title">Architecture: Korea and US SIMPHERA regions connect through a shared handoff layer</title>
+              <defs>
+                <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker>
+              </defs>
+              <g class="d-region">
+                <rect x="10" y="120" width="140" height="120" rx="14"/>
+                <text x="80" y="170" class="d-h">Korea</text>
+                <text x="80" y="194" class="d-s">SIMPHERA</text>
+                <rect x="750" y="120" width="140" height="120" rx="14"/>
+                <text x="820" y="170" class="d-h">US</text>
+                <text x="820" y="194" class="d-s">SIMPHERA</text>
+              </g>
+              <rect class="d-layer" x="190" y="20" width="520" height="320" rx="18"/>
+              <text x="450" y="50" class="d-layer-t">Handoff layer · single control region</text>
+              <g class="d-box"><rect x="220" y="75" width="200" height="64" rx="10"/><text x="320" y="103" class="d-h">Execution Adapter</text><text x="320" y="123" class="d-s">runs tasks via API</text></g>
+              <g class="d-box accent"><rect x="480" y="75" width="200" height="64" rx="10"/><text x="580" y="103" class="d-h">Evidence Store</text><text x="580" y="123" class="d-s">immutable S3 results</text></g>
+              <g class="d-box accent"><rect x="220" y="168" width="200" height="64" rx="10"/><text x="320" y="196" class="d-h">Control Plane</text><text x="320" y="216" class="d-s">Step Functions · SQS</text></g>
+              <g class="d-box accent"><rect x="480" y="168" width="200" height="64" rx="10"/><text x="580" y="196" class="d-h">Stale Detector</text><text x="580" y="216" class="d-s">flags outdated results</text></g>
+              <g class="d-box"><rect x="220" y="261" width="200" height="64" rx="10"/><text x="320" y="289" class="d-h">Handoff Gate</text><text x="320" y="309" class="d-s">accept · verify replay</text></g>
+              <g class="d-box accent"><rect x="480" y="261" width="200" height="64" rx="10"/><text x="580" y="289" class="d-h">Handoff Package</text><text x="580" y="309" class="d-s">versions + hash, sealed</text></g>
+              <g class="d-arrows">
+                <path d="M150 180H186" marker-end="url(#arr)" marker-start="url(#arr)"/>
+                <path d="M710 180H746" marker-end="url(#arr)" marker-start="url(#arr)"/>
+                <path d="M420 107H476" marker-end="url(#arr)"/>
+                <path d="M580 139V164" marker-end="url(#arr)"/>
+                <path d="M580 232V257" marker-end="url(#arr)"/>
+                <path d="M480 293H424" marker-end="url(#arr)"/>
+                <path d="M320 261V236" marker-end="url(#arr)"/>
+                <path d="M320 168V143" marker-end="url(#arr)"/>
+              </g>
+            </svg>
+            <figcaption><span class="dot"></span> Ideas borrowed from VFX &amp; animation pipelines</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skill-grid">
+        <div><h3>Frontend</h3><p>TypeScript, JavaScript, React Native (Expo), Next.js, React, i18n</p></div>
+        <div><h3>Product &amp; UX</h3><p>Figma, wireframing &amp; prototyping, product specs, competitor analysis, Jira</p></div>
+        <div><h3>AI</h3><p>OpenAI API (GPT-4.1, Whisper, embeddings), prompt evaluation, few-shot retrieval, LoRA fine-tuning</p></div>
+        <div><h3>Backend &amp; Cloud</h3><p>Supabase (PostgreSQL, RLS, RPC), SQL, Node.js, Python, AWS (Step Functions, SQS, DynamoDB, S3), GitHub Actions</p></div>
+      </div>
+      <div class="edu">
+        <div><h3>Education</h3><p>B.S. Software Engineering, Kookmin University, Seoul — expected Feb 2028</p></div>
+        <div><h3>Research</h3><p>Undergraduate Research Assistant, Smart Building BIM Lab (Oct 2024 – Jun 2025)</p></div>
+        <div><h3>Certification</h3><p>SQL Developer (SQLD), Korea Data Agency — Apr 2026</p></div>
+        <div><h3>Languages</h3><p>Korean (native), English</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h2>Let’s build something together.</h2>
+      <p>I’m interested in frontend, UX, and product roles — and in computer vision and VFX pipeline engineering.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:jsubin2004@gmail.com">jsubin2004@gmail.com</a>
+        <a class="btn" href="https://github.com/jsubin2466" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/suebin-jeon-414aa6434" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© 2026 Subin Jeon · Built by hand, hosted on GitHub Pages</footer>
+  <script src="main.js"></script>
+</body>
+</html>
