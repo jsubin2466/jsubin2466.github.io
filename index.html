@@ -37,7 +37,7 @@
       <div class="hero-text">
         <p class="eyebrow">Software Engineering · Kookmin University</p>
         <h1>I design and build products people <em>actually</em> use.</h1>
-        <p class="lede">I’m Subin — a frontend &amp; UX developer who also leads product. This fall I shipped a mobile app for long-distance couples, managed an AI product that turns cooking videos into trustworthy recipes, and led research for a cloud validation platform for autonomous driving.</p>
+        <p class="lede">I’m Subin — a frontend &amp; UX developer who also leads product. This fall I shipped a mobile app for long-distance couples, managed an AI product that turns cooking videos into trustworthy recipes, and led research for an AWS handoff layer that helps self-driving engineers pass on <em>why</em> they changed the code.</p>
         <div class="cta">
           <a class="btn primary" href="#work">See my work</a>
           <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
@@ -127,60 +127,65 @@
         </div>
       </article>
 
-      <!-- Follow-the-Sun -->
-      <article class="project" id="fts">
+      <!-- DecisionBridge -->
+      <article class="project" id="decisionbridge">
         <div class="project-head">
           <p class="tag">Cloud computing · Research Lead</p>
-          <h3>Follow-the-Sun SIL Validation</h3>
-          <p class="meta">Oct 2026 – Present · 3-person team · AWS proof of concept</p>
+          <h3>DecisionBridge</h3>
+          <p class="meta">Oct 2026 – Present · 3-person team · AWS × HCLTech solution proposal</p>
         </div>
         <div class="project-body single">
           <div class="project-copy">
-            <p class="summary">Autonomous-driving teams in Korea and the US run software-in-the-loop (SIL) simulations around the clock. When one team signs off, the other should be able to pick up a failure and reproduce it — without a meeting. We designed the handoff layer that makes that possible.</p>
+            <p class="summary">When a Dev engineer changes a self-driving module, the QA engineer sees <em>what</em> changed — but not <em>why</em>. The reasoning lives in agent chats, PRs, and commits, so QA re-investigates the same failure with half the context. DecisionBridge is an AWS handoff layer that turns that reasoning into an evidence-backed package and re-verifies it against the test results.</p>
             <h4>What I did</h4>
             <ul>
-              <li><b>Led the research</b> — competitor analysis of Applied Intuition, Foretellix, dSPACE, AWS ADDF, and NVIDIA OSMO, plus a literature review on AD test flakiness, test prioritization, and follow-the-sun handoffs.</li>
-              <li><b>Turned research into design</b> — ideas borrowed from VFX/animation pipelines (immutable evidence, stale-result detection, small task units) shaped a sealed handoff package and a lease-based job state machine.</li>
-              <li><b>Defined how we’d prove it</b> — 9 evaluation metrics (reproduction rate, handoff time, duplicate-commit rate…) and a 24-handoff experiment against manual baselines.</li>
+              <li><b>Led the research</b> — analyzed 4 HCLTech products (TestSphere, SiL, V&amp;V for Auto, AI-DLC) and 3 industry cases (HCLTech V&amp;V for Auto, AWS × AUMOVIO, dSPACE MCP Hub) across 19 cited sources to find the gap: the Dev → QA handoff of decisions, not another test tool.</li>
+              <li><b>Borrowed from film pipelines</b> — applied Pixar OpenUSD’s non-destructive layer composition to a 6-part handoff package (why, decision, change, rejected options, results, open tasks), with every claim tied to a commit SHA, test run, or engineer approval.</li>
+              <li><b>Designed how to prove it</b> — a 3-condition experiment (existing tools vs. a general chatbot vs. DecisionBridge) on 6 metrics such as handoff time and unsupported-claim rate, over 15–30 pilot episodes.</li>
             </ul>
             <ul class="chips">
-              <li>Research</li><li>AWS Step Functions</li><li>SQS</li><li>DynamoDB</li><li>S3</li><li>CARLA</li><li>dSPACE SIMPHERA</li><li>Python</li>
+              <li>Research</li><li>Amazon Bedrock</li><li>Step Functions</li><li>Lambda</li><li>EventBridge</li><li>DynamoDB</li><li>S3</li><li>A2A agents</li><li>OpenUSD</li>
             </ul>
           </div>
           <figure class="diagram">
-            <svg viewBox="0 0 900 360" role="img" aria-labelledby="fts-title">
-              <title id="fts-title">Architecture: Korea and US SIMPHERA regions connect through a shared handoff layer</title>
+            <svg viewBox="0 0 900 380" role="img" aria-labelledby="db-title">
+              <title id="db-title">DecisionBridge: a sending engineer's decision context flows through an AWS handoff layer to the receiving QA engineer, and test results flow back for re-verification</title>
               <defs>
                 <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker>
               </defs>
               <g class="d-region">
-                <rect x="10" y="120" width="140" height="120" rx="14"/>
-                <text x="80" y="170" class="d-h">Korea</text>
-                <text x="80" y="194" class="d-s">SIMPHERA</text>
-                <rect x="750" y="120" width="140" height="120" rx="14"/>
-                <text x="820" y="170" class="d-h">US</text>
-                <text x="820" y="194" class="d-s">SIMPHERA</text>
+                <rect x="10" y="40" width="150" height="110" rx="14"/>
+                <text x="85" y="86" class="d-h">Dev engineer</text>
+                <text x="85" y="108" class="d-s">+ coding agent</text>
+                <rect x="740" y="40" width="150" height="110" rx="14"/>
+                <text x="815" y="86" class="d-h">QA engineer</text>
+                <text x="815" y="108" class="d-s">+ agent</text>
               </g>
-              <rect class="d-layer" x="190" y="20" width="520" height="320" rx="18"/>
-              <text x="450" y="50" class="d-layer-t">Handoff layer · single control region</text>
-              <g class="d-box"><rect x="220" y="75" width="200" height="64" rx="10"/><text x="320" y="103" class="d-h">Execution Adapter</text><text x="320" y="123" class="d-s">runs tasks via API</text></g>
-              <g class="d-box accent"><rect x="480" y="75" width="200" height="64" rx="10"/><text x="580" y="103" class="d-h">Evidence Store</text><text x="580" y="123" class="d-s">immutable S3 results</text></g>
-              <g class="d-box accent"><rect x="220" y="168" width="200" height="64" rx="10"/><text x="320" y="196" class="d-h">Control Plane</text><text x="320" y="216" class="d-s">Step Functions · SQS</text></g>
-              <g class="d-box accent"><rect x="480" y="168" width="200" height="64" rx="10"/><text x="580" y="196" class="d-h">Stale Detector</text><text x="580" y="216" class="d-s">flags outdated results</text></g>
-              <g class="d-box"><rect x="220" y="261" width="200" height="64" rx="10"/><text x="320" y="289" class="d-h">Handoff Gate</text><text x="320" y="309" class="d-s">accept · verify replay</text></g>
-              <g class="d-box accent"><rect x="480" y="261" width="200" height="64" rx="10"/><text x="580" y="289" class="d-h">Handoff Package</text><text x="580" y="309" class="d-s">versions + hash, sealed</text></g>
+              <rect class="d-layer" x="200" y="20" width="500" height="200" rx="18"/>
+              <text x="450" y="46" class="d-layer-t">Handoff layer · AWS</text>
+              <g class="d-box"><rect x="222" y="64" width="140" height="58" rx="10"/><text x="292" y="89" class="d-h">Collect</text><text x="292" y="108" class="d-s">API GW · Lambda</text></g>
+              <g class="d-box"><rect x="380" y="64" width="140" height="58" rx="10"/><text x="450" y="89" class="d-h">Orchestrate</text><text x="450" y="108" class="d-s">Step Functions</text></g>
+              <g class="d-box accent"><rect x="538" y="64" width="140" height="58" rx="10"/><text x="608" y="89" class="d-h">Extract</text><text x="608" y="108" class="d-s">Amazon Bedrock</text></g>
+              <g class="d-box accent"><rect x="300" y="146" width="300" height="56" rx="10"/><text x="450" y="170" class="d-h">Handoff package</text><text x="450" y="189" class="d-s">why · decision · change · options · results · open</text></g>
+              <g class="d-region">
+                <rect x="200" y="290" width="500" height="70" rx="14"/>
+                <text x="450" y="320" class="d-h">Existing tools stay in place</text>
+                <text x="450" y="342" class="d-s">GitHub CI · TestSphere SiL · requirements (ALM)</text>
+              </g>
               <g class="d-arrows">
-                <path d="M150 180H186" marker-end="url(#arr)" marker-start="url(#arr)"/>
-                <path d="M710 180H746" marker-end="url(#arr)" marker-start="url(#arr)"/>
-                <path d="M420 107H476" marker-end="url(#arr)"/>
-                <path d="M580 139V164" marker-end="url(#arr)"/>
-                <path d="M580 232V257" marker-end="url(#arr)"/>
-                <path d="M480 293H424" marker-end="url(#arr)"/>
-                <path d="M320 261V236" marker-end="url(#arr)"/>
-                <path d="M320 168V143" marker-end="url(#arr)"/>
+                <path d="M160 93H218" marker-end="url(#arr)"/>
+                <path d="M362 93H376" marker-end="url(#arr)"/>
+                <path d="M520 93H534" marker-end="url(#arr)"/>
+                <path d="M608 122V142" marker-end="url(#arr)"/>
+                <path d="M600 174H736" marker-end="url(#arr)"/>
+                <path d="M815 150V325H704" marker-end="url(#arr)"/>
+                <path d="M300 325H85V154" marker-end="url(#arr)"/>
               </g>
+              <text x="828" y="250" class="d-s" style="text-anchor:start">run tests</text>
+              <text x="20" y="250" class="d-s" style="text-anchor:start">re-verify</text>
+              <text x="20" y="266" class="d-s" style="text-anchor:start">same SHA</text>
             </svg>
-            <figcaption><span class="dot"></span> Ideas borrowed from VFX &amp; animation pipelines</figcaption>
+            <figcaption><span class="dot"></span> Our proposal · existing tools are not replaced · results not yet measured</figcaption>
           </figure>
         </div>
       </article>
